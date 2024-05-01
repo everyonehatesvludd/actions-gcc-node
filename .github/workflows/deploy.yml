@@ -11,7 +11,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.4
 
-      - name: Build and deploy
-        uses: crazy-max/ghaction-github-pages@v4.0.0
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          build_dir: .
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
